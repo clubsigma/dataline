@@ -1,8 +1,8 @@
 /*
  * HISTORIAL DE MODIFICACIÓN
- * NOMBRE: Matricula.java
- * DESCRIPCIÓN: Posee atributos y métodos correspondientes a la matriculación del 
- * alumno en cada semestre
+ * NOMBRE: Asignatura.java
+ * DESCRIPCIÓN: Posee atributos y métodos correspondientes asignatura que se imparten
+ * en la Universidad Técnica de Cotopaxi
  * FECHA DE CREACIÓN: 10jul015
  * AUTOR: eacurioUTC
  * 
@@ -15,10 +15,8 @@
  * */
 
 package models;
-
-import java.util.Date;
-
-public class Matricula {
-    public Date fecha;
+public class Asignatura {
+    public String nombre;
+    public int creditos;
 
 }
