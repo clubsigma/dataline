@@ -14,24 +14,38 @@
  * */
  -->
 
-#{extends 'main.html' /}
-#{set title:'Home' /}
+#{extends 'main.html' /} #{set title:'Home' /}
 
 
 <style>
 h1 {
 	color: red;
 }
+
+#footer {
+	background-color: yellow;
+	color: black;
+	clear: both;
+	text-align: center;
+	padding: 5px;
+}
+
 </style>
 
 <br>
 <center>
 
 	<img src="@{'/public/images/utc.jpg'}" alt="" />
-	<h1 style="color:black">Bienvenidos</h1>
-	
+	<h1 style="color: black">Bienvenidos</h1>
+
 	<h1>Aqui estará DataLine</h1>
 	<h4>Una aplicación web echa con Play Framework</h4>
-	<h3 style="color:green">YO ESTUVE POR AQUI.</h3>
-	<h1> TODOS LOS CAMBIOS DE REALIZARAN AQUI</h1>
+	<h3 style="color: green">YO ESTUVE POR AQUI.</h3>
+	<h1>TODOS LOS CAMBIOS DE REALIZARAN AQUI</h1>
+	  
 </center>
+<div id="footer">
+		Aportando cambios
+
+		
+	</div>
