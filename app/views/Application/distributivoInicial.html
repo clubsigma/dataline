@@ -1,150 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>UNIVERSIDAD TECNICA DE COTOPAXI</title>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-        <meta name="description" content="Creative CSS3 Animation Menus" />
-        <meta name="keywords" content="menu, navigation, animation, transition, transform, rotate, css3, web design, component, icon, slide" />
-        <meta name="author" content="Codrops" />
-        <link rel="shortcut icon" href="../favicon.ico"> 
-        <link rel="stylesheet" type="text/css" href="public/stylesheets/demod.css" />
-        <link rel="stylesheet" type="text/css" href="public/stylesheets/style1d.css" />
-        <link href='http://fonts.googleapis.com/css?family=Terminal+Dosis' rel='stylesheet' type='text/css' />
-        
-        
-        
-        <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>     <!-- link to the jQuery library (see http://jquery.com) -->
-	
-	<!-- you can use these links, but better you have a link to the versions you need -->
-    <!-- usage of folder "current" is not recommended -->
-    <!-- see http://beaverslider.com/how-to-setup/docs/general for more info -->
-    <script src="http://beaverslider.com/code/current/beaverslider.js"></script>         <!-- link to a framework -->
-	<script src="http://beaverslider.com/code/current/beaverslider-effects.js"></script> <!-- link to a set of effects -->
-	
-	<!-- if you want to make styling link some css files -->
+
     
+
+    <!DOCTYPE html>
+<head>
+
+    <!-- Basic Page Needs
+  ================================================== -->
+	<meta charset="utf-8">
+	<title>DISTRIBUTIVO</title>
+	<meta name="description" content="Free Html5 Templates and Free Responsive Themes Designed by Kimmy | zerotheme.com">
+	<meta name="author" content="www.zerotheme.com">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <!-- CSS
+  ================================================== -->
+	<link rel="stylesheet" href="@{'public/stylesheets/zerogrid.css'}">
+	<link rel="stylesheet" href="@{'public/stylesheets/style.css'}">
+    <link rel="stylesheet" href="@{'public/stylesheets/responsive.css'}">
+	<link rel="stylesheet" href="@{'public/stylesheets/responsiveslides.css'}"/>
+	<link href="@{'public/images/iconoutc.ico'}" rel='icon' type='image/x-icon'/>
+	<script src="@{'public/javascripts/jquery.min.js'}"></script>
+	<script src="@{'public/stylesheets/responsiveslides.css'}"></script>
 	<script>
-	
-	$(function(){
-      var slider = new BeaverSlider({
-        structure: {
-          container: {
-            id: "my-slider",
-            width: 720,
-            height: 350,
-          }
-        },
-        content: {
-          images: [
-           
-            "public/images/2d.jpg",
-            "public/images/2_d.jpg",
-            "public/images/3d.jpg",
-            "public/images/4d.jpg",
-            "public/images/5d.jpg",
-          ]
-        },
-        animation: {
-          effects: effectSets["slider: big set 2"],
-          interval: 1000
-        }
-      });   
-	});
-	
+		$(function () {
+		  $("#slider").responsiveSlides({
+			auto: true,
+			pager: false,
+			nav: true,
+			speed: 500,
+			maxwidth: 962,
+			namespace: "centered-btns"
+		  });
+		});
 	</script>
-        
-        
-        
-        
-        
-        
-    </head>
-    <style>
-
-#seccion1 {
-line-height: 30px;
-background-color: c;
-height: 100px;
-width: 200px;
-float: left;
-padding: 5px;
-}
-
-#slide {
-position: absolute;
-top: 50%;
-left: 50%; /* Buscamos el centro vertical (relativo) del navegador */
-width: 600 px; /* Definimos el ancho del objeto a centrar */
-height: 400px; /* Definimos el alto del objeto a centrar */
-margin-top: -75px; /* Restamos la mitad de la altura del objeto con un margin-top */
-margin-left: -100px; 
-
-
-line-height: 30px;
-background-color: c;
-height: 100px;
-width: 200px;
-float: right;
-padding: 15px;
-}
-
-   #logo {
-line-height: 30px;
-background-color: c;
-height: 125px;
-width: 300px;
-float: center;
-padding: 5px;
-}
-
-</style>
-     <body >
-    <br>
-    <br>
- <div id=logo>
-<p><img src="public/images/utcd.png" align="center" width='350' height='100' /></p>
-
-
- </div>
-           <div style="font-size: 500%;color:white;"><center><strong>DISTRIBUTIVO DE TRABAJO</strong></center></div>
-           
-           
-
-
-           <br>
-<br>
-<br>           
-           <div id=seccion1>
-          
-            <div class="content">
-                  <ul class="ca-menu">
-                    <li>
-                        <a href="#">
-                            <span class="ca-icon">U</span>
-                            <div class="ca-content">
-                          
-                                <h2 class="ca-main"><strong><input size="5" type="submit"  value="CLASES PRESENCIALES"></strong> <a href="@{Application.distributivo}">Distributivos</a></h2>
-                             
-                                <h3 class="ca-sub"></h3>
-                            </div>
-                        </a>
-                    </li>
-                    
-                       
-                </ul>
-            </div><!-- content -->
-        </div>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
-         </div>
-        
-        <div id="slide"  >
-
- <div id="my-slider"></div>
-        
-</div>
-        
-         
-    </body>
-    </html>
+	
+</head>
+<body>
+<!--------------Header--------------->
+<header>
+	<div class="wrap-header zerogrid">
+		<div id="logo"><a href="#"><img src="@{'public/images/utc.png'}" style="height: 108px; width: 462px; "/></a></div>
+		
+		<div id="search">
+			<div class="button-search"></div>
+			<input type="text" value="Search..." onfocus="if (this.value == &#39;Search...&#39;) {this.value = &#39;&#39;;}" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Search...&#39;;}">
+		</div>
+	</div>
+</header>
+ <a href="@{Application.distributivo}">Distributivos</a>
+</body>
+</html>
