@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Horario Docente</title>
+<title>Distributivo</title>
 <link href="css/style.css" type="text/css" rel="stylesheet">
 <script type="text/javascript" src="/public/javascripts/jquery-1.6.4.min.js"></script>
 <style>
@@ -113,7 +113,7 @@
 <div id=izquierda>
      <br>
      <br>
-     <img src="public/images/slide1.png" height=100 width=100></img>
+     <img src="@{'public/images/slider2.jpg'}" height=100 width=100></img>
      <br>
      <br>
      <table align="center">
@@ -137,17 +137,14 @@
        <table border=1 cellspacing=0 id="myTable">
 		<tbody>
 		    <tr style="background: #3399ff; color: white;">
-		       <font size=5><strong>CLASES PRESENCIALES</strong></font>
+		       <font size=5><strong>REGISTRO</strong></font>
 		    </tr>
-		    
-		    ${var};
-		    
-		    
 			<tr style="background: red; color: white;">
 				<th style="width: 183px; "><font size=2><strong>CICLO</strong></font></th>
 				<th style="width: 183px; "><font size=2><strong>CARRERA</strong></font></th>
 				<th style="width: 183px; "><font size=2><strong>HORAS</strong></font></th>
 				<th style="width: 183px; "><font size=2><strong>ASIGNATURA</strong></font></th>
+				<th></th>
 							
 			</tr>
 			<tr>
@@ -159,6 +156,46 @@
 			   <td><input type="text" name="txtHora1" id="msg" style="width: 100px; font-family : Imprint MT Shadow "></td>
 			   <td><select name="txt1" id="cbxAsignatura1" style="width: 150px; font-family : Imprint MT Shadow ">
 			   </select></td>
+			   <td><input id="btnAnadir"  type="button" value="Anadir" style="width: 100px; font-family : Imprint MT Shadow " ></td>
+			</tr>	
+			
+			 	
+	</tbody>
+	</table>
+	
+	
+	<br>
+    <br>
+	<br>
+	    
+	
+	
+	<table border=1 cellspacing=0 id="myTable">
+		<tbody>
+		    <tr style="background: #3399ff; color: white;">
+		       <font size=5><strong>CLASES PRESENCIALES</strong></font>
+		    </tr>
+		    
+		    
+		    
+		    
+			<tr style="background: red; color: white;">
+				<th style="width: 183px; "><font size=2><strong>CICLO</strong></font></th>
+				<th style="width: 183px; "><font size=2><strong>CARRERA</strong></font></th>
+				<th style="width: 183px; "><font size=2><strong>HORAS</strong></font></th>
+				<th style="width: 183px; "><font size=2><strong>ASIGNATURA</strong></font></th>
+				<th></th>
+							
+			</tr>
+			<tr>
+			   <td><select name="txt1" id="cbxCiclo1" style="width: 150px; font-family : Imprint MT Shadow ">
+			   </select></td>
+			   <td><select name="txt1" id="cbxCarrera1" style="width: 150px; font-family : Imprint MT Shadow ">
+			   </select></td>
+			   <td><input type="text" name="txtHora1" id="msg" style="width: 100px; font-family : Imprint MT Shadow "></td>
+			   <td><select name="txt1" id="cbxAsignatura1" style="width: 150px; font-family : Imprint MT Shadow ">
+			   </select></td>
+			   <td><input id="btnEliminar"  type="button" value="Eliminar" style="width: 100px; font-family : Imprint MT Shadow " ></td>
 			</tr>
 			
 
@@ -171,8 +208,6 @@
 			
 	</tbody>
 	</table>
-	<br>
-	    
 		
 		<br>
 		<button style="font-family : Imprint MT Shadow "><font size=4><strong>GUARDAR</strong></font></button>

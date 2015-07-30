@@ -30,7 +30,12 @@ public class Application extends Controller {
     public static void distributivo() {
         render();
     }
+
     public static void distributivoInicial() {
         render();
     }
+
+    //public static void hojacredito(){
+    	//render();
+    //}
 }
