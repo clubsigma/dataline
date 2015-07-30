@@ -15,7 +15,11 @@
  * */
 
 package models;
-public class Asignatura {
+
+import javax.persistence.Entity;
+import play.db.jpa.Model;
+@Entity
+public class Asignatura extends Model{
     public String nombre;
     public int creditos;
 

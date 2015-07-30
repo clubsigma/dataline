@@ -15,7 +15,13 @@
  * */
 
 package models;
-public class Tipo {
+
+import javax.persistence.Entity;
+
+import play.db.jpa.Model;
+
+@Entity
+public class Tipo extends Model{
     public String descripcion;
 
 }

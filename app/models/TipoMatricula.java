@@ -15,7 +15,13 @@
  * */
 
 package models;
-public class TipoMatricula {
+
+import javax.persistence.Entity;
+
+import play.db.jpa.Model;
+
+@Entity
+public class TipoMatricula extends Model {
     public float costo;
     public String descripcion;
 

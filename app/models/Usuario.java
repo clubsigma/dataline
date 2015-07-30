@@ -7,6 +7,11 @@ import javax.persistence.*;
 
 import java.util.*;
 
+import javax.persistence.Entity;
+
+import play.db.jpa.Model;
+
+
 @Entity
 public class Usuario extends Model {
 	 public String nombre;

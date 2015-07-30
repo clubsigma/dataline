@@ -9,6 +9,11 @@ import javax.persistence.ManyToOne;
 
 import play.db.jpa.Model;
 
+import javax.persistence.Entity;
+
+import play.db.jpa.Model;
+
+
 @Entity
 public class Proyecto extends Model {
 	

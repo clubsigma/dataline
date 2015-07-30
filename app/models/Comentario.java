@@ -18,7 +18,10 @@ package models;
 
 import java.util.Date;
 
-public class Comentario {
+import javax.persistence.Entity;
+import play.db.jpa.Model;
+@Entity
+public class Comentario extends Model{
     public String contenido;
     public Date fecha;
 

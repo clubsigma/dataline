@@ -16,9 +16,12 @@
 
 package models;
 
-import java.util.Date;
+import javax.persistence.Entity;
+import play.db.jpa.Model;
 
-public class Matricula {
+import java.util.Date;
+@Entity
+public class Matricula extends Model{
     public Date fecha;
 
 }

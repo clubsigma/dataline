@@ -15,7 +15,13 @@
  * */
 
 package models;
-public class Rol {
+
+import javax.persistence.Entity;
+
+import play.db.jpa.Model;
+
+@Entity
+public class Rol extends Model{
     public String descripcion;
 
 }

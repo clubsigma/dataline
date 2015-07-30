@@ -18,7 +18,12 @@ package models;
 
 import java.util.Date;
 
-public class Actividad {
+import play.db.jpa.Model;
+
+import javax.persistence.Entity;
+import play.db.jpa.Model;
+@Entity
+public class Actividad extends Model {
     public String descripcion;
     public String hora;
     public Date fecha;
@@ -29,4 +34,9 @@ public class Actividad {
 		this.fecha = fecha;
 	}
     
+	
+	public String toString()  {
+        return "nombre: (" + descripcion + ")";
+}
+
 }

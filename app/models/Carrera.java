@@ -15,7 +15,11 @@
  * */
 
 package models;
-public class Carrera {
+
+import javax.persistence.Entity;
+import play.db.jpa.Model;
+@Entity
+public class Carrera extends Model {
     public String nombre;
 
 }

@@ -16,7 +16,12 @@
 
 package models;
 
-public class Nota {
+import javax.persistence.Entity;
+
+import play.db.jpa.Model;
+
+@Entity
+public class Nota extends Model {
     public float valor;
 
 }

@@ -20,7 +20,10 @@ import java.util.Date;
 
 import play.db.jpa.Blob;
 
-public class Documento {
+import javax.persistence.Entity;
+import play.db.jpa.Model;
+@Entity
+public class Documento extends Model{
     public Date fecha;
     public Blob archivo;
 

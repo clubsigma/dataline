@@ -14,7 +14,13 @@
  * 			
  * */
 package models;
-public class Unidad {
+
+import javax.persistence.Entity;
+
+import play.db.jpa.Model;
+
+@Entity
+public class Unidad extends Model {
     public String nombre;
 
 }

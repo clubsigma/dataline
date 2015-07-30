@@ -14,7 +14,13 @@
  * 			
  * */
 package models;
-public class Periodo {
+
+import javax.persistence.Entity;
+
+import play.db.jpa.Model;
+
+@Entity
+public class Periodo extends Model{
     public String inicio;
     public String fin;
 

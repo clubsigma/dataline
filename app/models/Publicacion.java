@@ -17,7 +17,12 @@
 package models;
 import java.util.Date;
 
-public class Publicacion {
+import javax.persistence.Entity;
+
+import play.db.jpa.Model;
+
+@Entity
+public class Publicacion extends Model{
     public String Contenido;
     public int calificacion;
     public Date fecha;
