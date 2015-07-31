@@ -1,0 +1,19 @@
+#slider {
+	position: relative;
+	Width: 400px;
+	Height: 250px;
+	Padding: 10px;
+	Margin: 0 auto;
+	Background-color: #000;
+}
+
+#slider > div {
+	position: absolute;
+	Width: 100%;
+	Height: 100%;
+}
+
+
+
+
+
