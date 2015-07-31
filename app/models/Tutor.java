@@ -8,6 +8,7 @@ public class Tutor extends Model {
 	public String nombre;
 	public String apellido;
 	public String password;
+	public boolean isAdmin;
 	
 	public Tutor (String cedula, String nombre, String apellido, String password ){
 		this.cedula = cedula;
