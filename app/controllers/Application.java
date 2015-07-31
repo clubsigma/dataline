@@ -41,23 +41,15 @@ public class Application extends Controller {
     }
 
     public static void otrasActividades() {
-        render();
+    
     }
+
     
     
-    public static void index2() {
-		
-		Carrera carrera=inicializarU();
-		
-		render(carrera);
-    }
-    
-    private static Carrera inicializarU() {
- 		Carrera carrera = new Carrera();    //Instanciacion de un objeto
- 		carrera.addUnidad(1, "CIYA");        
- 		carrera.addUnidad(2, "CAREN");        
- 		carrera.addUnidad(3, "CCHH");        
- 		carrera.save();        //Guardo
- 	    return carrera;
- 	}
+    //public static void hojacredito(){
+    	//render();
+    //}
+
+ 
+ 
 }
