@@ -41,11 +41,15 @@ public class Application extends Controller {
     }
 
     public static void otrasActividades() {
-        render();
+    
     }
+
+    
+    
     //public static void hojacredito(){
     	//render();
     //}
-    
-   
+
+ 
+ 
 }
