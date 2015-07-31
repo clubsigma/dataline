@@ -18,6 +18,7 @@ package models;
 
 import java.util.HashMap;
 import java.util.Map;
+
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.MapKey;
@@ -27,6 +28,20 @@ import play.db.jpa.Model;
 @Entity
 public class Carrera extends Model {
     public String nombre;
+    private long codigo;
 
-   
+    @OneToMany(cascade = CascadeType.ALL)
+   	@MapKey(name = "codigo")
+   	public Map<Long, Unidad> unidad;
+    
+    public Carrera() {
+		this.unidad = new HashMap<Long, Unidad>();
+	}
+    
+    
+    public void addUnidad(long codigo, String nombre) {
+		Unidad unidad = new Unidad(codigo, nombre);
+
+		this.unidad.put(codigo, unidad);		
+	}
 }

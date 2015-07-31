@@ -1,0 +1,191 @@
+#{extends 'main.html' /}
+#{set title:'agregarHistoria.html' /}
+
+<script>
+$().ready(function(){
+	
+	$( "#accordion" ).accordion({
+		active:false,
+		collapsible: true,
+		header: "h3"
+	});
+	
+});
+
+
+</script>
+
+<br>
+
+<div class="container">
+
+	<div class="well">
+		<h4 class="text-center"><b>Gestión de Historias de Usuario para el Proyecto:</b></h4>
+		<center> <b>"${proyecto.tema}"</b></center>
+	</div>
+</div>	
+	
+	
+	
+	
+	
+	
+
+<div class="container well">
+
+	<div class="col-lg-2">
+	</div>
+	
+	<div class="col-lg-8">
+	
+			
+		
+				
+			    <div class="table-responsive table-bordered"> 
+				   	 <form action="@{Historias.guardarHistoria}" method="post">
+				   	 		<input type="hidden" name="id_proyecto" value="${proyecto.id}" />
+				   	 		<input type="hidden" name="numero" value="${proyecto.historias.size()+1}" />
+					    	#{if flash.confirmacion}
+						    	<div class="alert alert-success text-center">
+						    		${flash.confirmacion}	
+						    	</div>
+					    	#{/if}
+					      <table class="table"  border="1">
+					        <thead> 
+					        
+						         <tr> 
+						            <th colspan="2"  bgcolor="#3E84C0" style="color: black;"><center><h4><b>NUEVA HISTORIA DE USUARIO</b></h4></center></th> 
+						         </tr>
+						    </thead>	
+						    <tbody>
+						        
+						        	             
+						          <tr> 
+						            <th>Numero :<input type="text"  disabled="disabled" placeholder="Numero de la historia" value="${proyecto.historias.size()+1}" style="width:200px;height:25px"/></th> 
+						            <th>Usuario :<input type="text" name="usuario" autofocus required id="usuario" placeholder="Usuario que utilizará esta funcionalidad" autofocus style="width:258px; height:25px"/></th>
+						          </tr> 
+						          
+						          <tr> 	
+						            <th colspan="2">Nombre de la Historia :<input type="text" required name="nombre" placeholder="Funcionalidad que debe implementarse" autofocus style="width:520px;height:25px" /></th>
+						          </tr>
+						          
+						          <tr> 
+						            <th colspan="2">
+						            
+						            Prioridad :
+						            
+						            <select name="prioridad" required >
+						            	<option value="">(Seleccione)</option>
+							            <option value="1">Alta</option>
+							            <option value="2">Media</option>	
+							            <option value="3">Baja</option>
+						            </select>
+						            
+						            
+						            </th> 
+						          </tr>
+						          
+						         				          
+						          <tr> 
+						            <th colspan="2">Descripcion : <textarea  name="descripcion" class="form-control" rows="5" required="required" placeholder="Yo como _______(usuario)________ deseo que _________(funcionalidad)____________"></textarea></th> 
+						          </tr>
+						          <tr>
+						          	
+						          	<td colspan="2" ><center><button class="btn btn-primary btn-block" type="submit"><b> Guardar </b></button>  </center></td>
+						          	
+						          </tr>
+		
+					        </tbody>
+					      </table>
+					</form>			      
+			    
+			 </div>
+
+
+  </div> 
+  
+   <div class="col-lg-2">
+	</div>
+	
+	
+	#{if proyecto.historias}
+		<div class="row">
+			<div class="col-lg-12">
+				<center><h4><b>HISTORIAS DE USUARIO EXISTENTES:</b></h4></center>
+				<div id="accordion">
+
+					#{list items:proyecto.historias,as:'historia'}
+						<h3> Historia de Usuario Nº ${historia.numero}<i class="caret"></i></h3>
+						
+						<div>
+						
+						
+						  <table class="table table-border" >
+					        
+						         <tr> 
+						            <th colspan="2"  bgcolor="#3E84C0" style="color: black;"><center><h4><b>HISTORIA DE USUARIO</b></h4></center></th> 
+						         </tr>
+			
+						        	             
+						          <tr> 
+						            <th>Numero :<input type="text"  disabled="disabled" placeholder="Numero de la historia" value="${historia.numero}" style="width:200px;height:25px"/></th> 
+						            <th>Usuario :<input type="text" disabled="disabled" value="${historia.usuario}"  name="usuario" autofocus required id="usuario" placeholder="Usuario que utilizará esta funcionalidad" autofocus style="width:258px; height:25px"/></th>
+						          </tr> 
+						          
+						          <tr> 	
+						            <th colspan="2">Nombre de la Historia :<input type="text" disabled="disabled" value="${historia.nombre}" required name="nombre" placeholder="Funcionalidad que debe implementarse" autofocus style="width:520px;height:25px" /></th>
+						          </tr>
+						          
+						          <tr> 
+						            <th colspan="2">
+						            
+						            Prioridad :
+						            
+						            
+						            #{if historia.prioridad==1}
+						            	
+						            	<input type="text" disabled="disabled" class="alert alert-danger" value="Alta" style="width:250px;height:45px" />
+						            #{/if}
+						            #{if historia.prioridad==2}
+						            	<input type="text" disabled="disabled" class="alert alert-warning" value="Media" style="width:250px;height:25px" />
+						            #{/if}
+						            #{if historia.prioridad==3}
+						            	<input type="text" disabled="disabled" class="alert alert-success" value="Baja" style="width:250px;height:25px" />
+						            #{/if}
+						            
+						            
+						            </th> 
+						          </tr>
+						          
+						         				          
+						          <tr> 
+						          
+						            <th colspan="2">Descripcion : <textarea disabled="disabled"  name="descripcion" class="form-control" rows="5" required="required" placeholder="">${historia.descripcion}</textarea></th> 
+						          </tr>
+						          <tr>
+						          	
+						          	<th colspan="2" >
+						          	 Estado:
+						          	 	#{if historia.validacion}
+						          	 		<input type="text"  value="Validada por el Scrum Master" disabled="disabled" style=" background-color:#DFF0D8; width:258px; height:25px" />
+						          	 	#{/if}
+						          	 	#{else}
+						          	 		<input type="text" value="Pendiente de Validar" disabled="disabled" style="background-color: #F2DEDE; width:258px; height:25px"/>
+						          	 	#{/else}
+						          	 	<br>
+						          	</th>
+						          	
+						          </tr>
+					      </table>
+							
+						<br><br><br>
+						</div>
+						<br>
+					#{/list}
+				</div>
+			</div>
+		</div>
+	#{/if}
+
+	
+</div>

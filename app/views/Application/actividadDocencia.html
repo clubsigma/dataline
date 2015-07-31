@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Horario Docente</title>
+<link href="css/style.css" type="text/css" rel="stylesheet">
+<script type="text/javascript" src="/public/javascripts/jquery-1.6.4.min.js"></script>
+<style>
+#header{
+     color:white;
+     text-align:center;
+     padding:5px;
+}
+#submenu{
+      color:black;
+      text-align:center;
+      padding:5px;
+}
+#section{
+     line-height:30px;
+     text-align:center;
+     height:200px;
+     width:500px;
+     float:left;
+     padding:5px;
+}
+#section1{
+     line-height:30px;
+     text-align:center;
+     height:350px;
+     width:500px;
+     float:center;
+     padding:5px;
+}
+#izquierda{
+	line-height:30px;
+	text-align:center;
+	color:black;
+	height:330px;
+	width:250px;
+	float:Left;
+	padding:5px;
+	}
+	
+	#izquierda1{
+	line-height:30px;
+	text-align:center;
+	color:black;
+	height:330px;
+	width:250px;
+	float:Left;
+	padding:5px;
+	}
+#tabla1{
+     height:600px;
+     width:1500px;
+     float:center;
+     padding:50px;
+     text_align:center;
+}
+#nav1{
+     background-color:blue;
+     width:100px;
+     float:left;
+     padding:10px;
+     text_align:center;
+}
+#footer{
+     color:white;
+     text-align:center;
+     clear:both;
+     text_align:center;
+     padding:5px;
+}
+  #logo1 {
+line-height: 30px;
+background-color: c;
+height: 125px;
+width: 300px;
+float: center;
+padding: 5px;
+}
+</style>
+<script src="js/jquery-1.11.1.js"></script>
+<script>
+        $(document).ready(function(){
+        $("#section1").hide("slow");        
+        $("#most").click(function(){
+        $("#section1").show("slow");
+        $("#section").hide("slow");
+        });
+        });
+</script>
+<script>
+     $(document).ready(function(){
+        $("#most1").click(function(){
+        $("#section").show("slow");
+        $("#section1").hide("slow");
+        });
+        });
+</script>
+<script>     
+     function ocultar(){
+          document.getElementById("nav1").style.display="none";
+     }
+</script>
+</head>
+<body style= background:url(../public/images/beige_paper.jpg) repeat top left>
+ <br>
+    <br>
+ <div id=logo1>
+<p><img src="/public/images/LOGO-SIS.png" align="center" width='350' height='100' /></p>
+ </div>
+<div id=header>
+      <br>
+      <br>
+      <table align="center" id="myTable">
+           <tr><td style="font-family : Imprint MT Shadow;"><font size=6>DISTRIBUTIVO DE TRABAJO</font></td></tr>
+      </table>
+      
+</div>
+<div id=izquierda>
+     <br>
+     <br>
+     <img src="/public/images/1.JPG" height=100 width=100></img>
+     <br>
+     <br>
+     <table align="center">
+           <tr><td style="font-family : Imprint MT Shadow;"><strong><font size=4>DOCENTE: </font></strong><select type="text" name="txt1" id="msg" style="width: 150px; font-family : Imprint MT Shadow "> </select></td> </tr>
+           <tr><td style="font-family : Imprint MT Shadow;"><strong><font size=4>CICLO-ACADEMICO: </font></strong><select type="text" name="txt1" id="msg" style="width: 150px; font-family : Imprint MT Shadow "> </select></td> </tr>
+     </table>
+      <br>
+     
+</div>
+<div id=izquierda1>
+     
+</div>
+<div id="section">
+     
+       <table border=1 cellspacing=0 id="myTable">
+		<tbody>
+		    <tr style="background: #3399ff; color: white;">
+		    <br>
+		    <br>
+		    
+		       <font size=5 style="color:white"><strong>ACTIVIDADES DE DOCENCIA</strong></font>
+		    </tr>
+		   <br>
+		   <br>
+			<tr style="background: red; color: white;">
+				<th style="width: 183px; "><font size=2><strong>ACTIVIDADES DE DOCENCIA</strong></font></th>
+				<th style="width: 183px; "><font size=2><strong>HORAS</strong></font></th>
+				
+							
+			</tr>
+			<tr>
+			   <td><select name="txt1" id="cbxAct" style="width: 150px; font-family : Imprint MT Shadow "></select></td>
+			  
+			   <td><input type="text" name="txtHora1" id="msg" style="width: 100px; font-family : Imprint MT Shadow "></td>
+			  
+			</tr>
+			<tr>
+			   <td><select name="txt1" id="cbxAct" style="width: 150px; font-family : Imprint MT Shadow "></select></td>
+			  
+			   <td><input type="text" name="txtHora2" id="msg" style="width: 100px; font-family : Imprint MT Shadow "></td>
+			
+			</tr>
+			<tr>
+			    <td><select name="txt1" id="cbxAct" style="width: 150px; font-family : Imprint MT Shadow "></select></td>
+			  
+			   <td><input type="text" name="txtHora3" id="msg" style="width: 100px; font-family : Imprint MT Shadow "></td>
+			</tr>
+			<tr>
+			    <td><select name="txt1" id="cbxAct" style="width: 150px; font-family : Imprint MT Shadow "></select></td>
+			  
+			   <td><input type="text" name="txtHora4" id="msg" style="width: 100px; font-family : Imprint MT Shadow "></td>			   
+			</tr>
+			<tr>
+				<td style="width: 183px; "><font size=3><strong>TOTAL</strong></font></td>
+				<td><input type="text" name="txt1" id="msg" style="width: 100px; font-family : Imprint MT Shadow "></td>
+				<td>
+		    <tr>
+		    
+			
+	</tbody>
+	</table>
+	<br>
+	    
+		<br>
+		<button style="font-family : Imprint MT Shadow "><font size=4><strong>GUARDAR</strong></font></button>
+		<br>
+		<br>
+		
+		<button style="font-family : Imprint MT Shadow " onclick="window.print()"><font size=4><strong>IMPRIMIR</strong></font></button>
+		<br>
+		<br>
+		
+		
+</div>
+</body>
+</html>

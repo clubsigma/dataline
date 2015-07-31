@@ -13,4 +13,18 @@ GET     /public/                                staticDir:public
 
 # Catch all
 *       /{controller}/{action}                  {controller}.{action}
-*     /admin           module:crud
+*     /admin           							module:crud
+
+
+# Importar rutas de Secure
+*       /                                       module:secure
+
+#Proyectos
+*		/proyectos								Proyectos.index
+
+#Equipos
+*		/equipos								Equipos.index
+
+#Historias
+*		/historias								Historias.index
+

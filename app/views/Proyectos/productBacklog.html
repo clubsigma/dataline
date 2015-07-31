@@ -1,0 +1,74 @@
+#{extends 'main.html' /}
+#{set title:'productBackloghtml' /}
+
+
+
+<h3 class="well text-center container">Product Backlog</h3>
+
+<div class="container">
+		<div class="col-lg-4">
+		</div>
+			<div class="col-lg-4">
+			</div>
+		<div class="col-lg-4">
+		<a href="/proyectos/listado" class="btn btn-default" >&nbsp; Atras &nbsp;</a> 
+
+		</div>	
+</div>
+<br>
+
+#{if proyecto.historias}
+
+<div class="container well">
+	<table class="table table-striped table-hover table-bordered">
+		<tr>
+			<th>Usuario </th>
+			<th>Nombre </th>
+			<th>Prioridad</th>
+		</tr>
+		
+		#{list items:proyecto.historias, as:'historia'}
+			#{if historia.prioridad==1 && historia.validacion}
+			<tr class="danger"> 
+				<td>${historia.usuario}</td>
+				<td>${historia.nombre}</td>
+				<td>Alta</td>
+			</tr>
+			#{/if}
+		
+		#{/list}
+		
+		#{list items:proyecto.historias, as:'historia'}
+			#{if historia.prioridad==2 && historia.validacion}
+			<tr class="warning"> 
+				<td>${historia.usuario}</td>
+				<td>${historia.nombre}</td>
+				<td>Media</td>
+			</tr>
+			#{/if}
+		
+		#{/list}
+		
+		
+		#{list items:proyecto.historias, as:'historia'}
+			#{if historia.prioridad==3 && historia.validacion}
+			<tr class="success"> 
+				<td>${historia.usuario}</td>
+				<td>${historia.nombre}</td>
+				<td>Baja</td>
+			</tr>
+			#{/if}
+		
+		#{/list}
+		
+	</table>
+</div>
+#{/if}
+#{else}
+
+	<div class="alert alert-danger container">
+		<b>Aún no se dispone de un Product backlog para este proyecto :(</b>		
+	</div>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+#{/else}
+
