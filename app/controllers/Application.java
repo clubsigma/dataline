@@ -40,6 +40,9 @@ public class Application extends Controller {
         render();
     }
 
+    public static void otrasActividades() {
+        render();
+    }
     //public static void hojacredito(){
     	//render();
     //}
