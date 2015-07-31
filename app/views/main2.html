@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<html>
+	
+    <head>
+        <title>#{get 'title' /}</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/main.css'}">
+        #{get 'moreStyles' /}
+        <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
+        <script src="@{'/public/javascripts/jquery-1.6.4.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+        #{get 'moreScripts' /}
+        
+        
+    <link rel="stylesheet" media="screen" href="@{'public/stylesheets/estilosIndex.css'}">
+	<link rel="stylesheet" media="screen" href="@{'public/stylesheets/materialize.min.css'}">
+	<link rel="stylesheet" media="screen" href="@{'public/stylesheets/materialize.css'}">
+	
+	<!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	<script src="@{'/public/javascripts/jquery-1.6.4.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+	<script type="text/javascript" src="/public/js/materialize.min.js"></script>
+        
+    </head>
+
+    
+    <body>
+
+<head>
+	<meta charset="UTF-8">
+	<title>Estudiante</title>
+	
+		<style type="text/css">
+		
+		#user{
+			float:right;
+			width:150px;
+			text-align:center;	
+			background: #00695c;
+		}
+
+		#user:hover{
+			background: #26a69a;
+		}
+		
+		#contenedor{
+
+		}
+		
+		footer{
+		float: left;
+		}
+		
+		
+	</style>
+	<link rel="stylesheet" media="screen" href="@{'public/stylesheets/estilosEstudiante.css'}">
+	<link rel="stylesheet" media="screen" href="@{'public/stylesheets/estilosAdministardor.css'}">
+	<link rel="stylesheet" media="screen" href="@{'public/stylesheets/materialize.min.css'}">
+	<link rel="stylesheet" media="screen" href="@{'public/stylesheets/materialize.css'}">
+	
+	<!--Let browser know website is optimized for mobile-->
+     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+	
+	<script src="@{'/public/javascripts/jquery-1.6.4.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+	<script type="text/javascript" src="/public/js/materialize.min.js"></script>
+	
+	</head>
+
+<!-- Inicio Ménu -->
+  <nav id="seccionMenu" class="red darken-2">
+		<div class="container">
+			<a href="#" class="brand-logo">ASTRIC</a>	
+			<ul class="right hide-on-med-and-down">
+				<li><a href="#">Inicio</a></li>
+				<li><a href="#">Ver Hoja de Matricula</a></li>
+				<li><a href="#">Horarios</a></li>
+				<li><a href="#">Ayuda</a></li>
+				#{if conectado}
+				<li><a href="/logout">Cerrar Sesión</a></li>
+	 			#{/if}
+				  
+				 <div id="user">
+				 #{if conectado}
+					Usuario<a href="#"><i></i>${conectado}</a>
+				 #{/if} #{else}
+				 </div>
+			</ul>
+		</div>
+	</nav>        
+<!-- Fin Ménu -->
+
+
+
+<div class="section no-pad-bot" id="index-banner">
+	<h4 class="header center light">
+	Bienvenido al Sistema de
+		Validación de Asignaturas Para Matricula</h4>
+
+	<p>Loremmpun</p>
+</div>
+
+<div>
+		<ul>
+			<!-- Seccion para boton Ingresar -->
+			<div class="row center">
+
+				<a href="/login" id="download-button"
+					class="btn-large waves-effect waves-light light-blue lighten-1">Iniciar
+					Sesión</a>#{/else}
+			</div>
+		</ul>
+</div>
+	#{doLayout /}
+
+	<ul class="collapsible" data-collapsible="accordion">
+	</ul>
+
+</div>
+
+<br>
+    <!-- Seccion Footer -->
+	<footer class="page-footer grey darken-3">
+		<div class="container">
+			<div class="row">
+				<div class="col l6 s12">
+					<h5 class="white-text">Universidad Técnica de Cotopaxi</h5>
+					<p class="grey-text text-lighten-4">Por la vinculación de la universidad con el pueblo</p>
+				</div>
+				
+				<div class="col l3 s12">
+					<h5 class="white-text">Información</h5>
+					<ul>
+						<li><a class="white-text" href="#!">www.utc.edu.ec</a></li>
+						<li><a class="white-text" href="#!">www.astric.com</a></li>
+					</ul>
+				</div>
+				
+				<div class="col l3 s12">
+					<h5 class="white-text">Contactos</h5>
+					<ul>
+						<li><a class="white-text" href="#!">0985935406</a></li>
+						<li><a class="white-text" href="#!">0327347478</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="footer-copyright">
+			<div class="container">
+				Autor: <a class="orange-text text-lighten-3" href="#">Derechos Reservados ASTRIC 2015 </a>
+			</div>
+		</div>
+	</footer>
+    </body>
+</html>

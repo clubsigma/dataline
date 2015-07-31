@@ -1,0 +1,121 @@
+#{extends 'main.html' /}
+#{set title:'index.html' /}
+<script>
+$().ready(function(){
+	
+	$( "#accordion" ).accordion({
+		active:false,
+		collapsible: true
+	});
+	
+});
+
+
+</script>
+
+<h2 class="well text-center"> <i class="icon-group">&nbsp; </i>Equipos de Desarrollo</h2>
+
+
+#{if equipos}
+			<div class="container">
+			
+				<div id="accordion">
+				
+				
+				%{int num=1;}%
+					#{list items:equipos, as:'equipo'}
+						
+							#{if equipo.proyecto.scrumMaster == usuarioConectado}
+								<h3>Proyecto Nº ${num}: &nbsp; ${equipo.proyecto.tema} <i class="caret"></i></h3>
+								<div>
+									<table class="table table-striped table-hover table-bordered">
+									<tr>
+										<th>
+											<center>ROL</center>
+										</th>
+										<th>
+											<center>RESPONSABLE</center>
+										</th>
+									
+									</tr>
+									<tr>
+										<td>
+											<center>SCRUM MASTER</center>
+										</td>
+										
+										<td>
+											<center> ${equipo.proyecto.scrumMaster.nombre}  ${equipo.proyecto.scrumMaster.apellido}</center>
+										</td>
+									</tr>
+									
+									
+									#{if equipo.productOwner}
+									<tr>
+										<td>
+											<center>PRODUCT OWNER</center>
+										</td>
+										
+										<td>
+											<center>${equipo.productOwner.nombre} ${equipo.productOwner.apellido}</center>
+										</td>
+										
+									</tr>
+									#{/if}
+									#{else}
+									 <tr>
+											<td>
+												<center>PRODUCT OWNER</center>
+											</td>
+											<td>
+												<center>Aún no ha asignado un Product Owner al proyecto. <a href="/equipos/gestionarEquipo?id_proyecto=${equipo.proyecto.id}" style="color:blue">Agregar Ahora</a></center>
+											</td>
+											
+										</tr>
+									
+									#{/else}
+									
+									#{if equipo.developmentTeam}
+										#{list items:equipo.developmentTeam,as:'developer'}
+										<tr>
+											<td>
+												<center>DEVELOPMENT TEAM</center>
+											</td>
+											<td>
+												<center>${developer.nombre} ${developer.apellido}</center>
+											</td>
+											
+										</tr>
+										#{/list}
+									#{/if}
+									#{else}
+										<tr>
+											<td>
+												<center>DEVELOPMENT TEAM</center>
+											</td>
+											<td>
+												<center>Aún no tiene developers asignados a este proyecto. <a href="/equipos/gestionarEquipo?id_proyecto=${equipo.proyecto.id}" style="color:blue">Agregar Ahora</a></center>
+											</td>
+											
+										</tr>
+									#{/else}
+				
+									</table>
+								<br>
+								</div>
+								%{num++}%
+							#{/if}
+							#{else}			
+						#{/else}	
+						
+					#{/list}
+				</div>
+			</div>
+			<br /><br /><br /><br /><br /><br /><br /><br />
+#{/if}
+#{else}			
+<div class="alert alert-danger container">
+	<h5><b>El sistema aún no existen proyectos de desarrollo :(</b></h5>
+
+</div>
+	<br /><br /><br /><br /><br /><br />	<br /><br /><br /><br /><br /><br />	<br /><br /><br /><br /><br /><br />
+#{/else}			

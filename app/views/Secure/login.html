@@ -1,0 +1,67 @@
+#{extends 'main.html' /}
+#{set title:'login.html' /}
+
+<br /><br />
+  <div class="top-content" >
+        	
+            <div class="inner-bg">
+                <div class="container well">
+                    <div class="row">
+                        <div class="col-sm-4 text">
+                            <h1 style="color:black"><strong>SCRUM</strong> Inicio de Sesión</h1>
+                            <div class="description">
+                            	<p style="color:black">
+	                            	Si no dispone de una cuenta debe REGISTRARSE:
+                            	</p>
+                            </div>
+                            <div class="top-big-link">
+                            	<a class="btn btn-success" href="/usuarios/registro"><b>Registro</b></a>                            	
+                            </div>
+                        </div>
+                        <div class="col-sm-5 form-box pull-right">
+                        	<div class="form-top">
+                        		<div class="form-top-left">
+                        			<h3>Iniciar Sesión</h3>
+                            		<p>Ingrese sus datos personales para ingresar al sistema:</p>
+                        		</div>
+                        		<div class="form-top-right">
+                        			<i class="fa fa-pencil"></i>
+                        		</div>
+                            </div>
+                            
+                            <div class="form-bottom">
+			                   
+			                   #{form @authenticate(), method:'post'}
+			                     
+			                     	#{if flash.error}
+									<div class="alert alert-danger">
+										Email o contraseña incorrecta
+									</div>
+									#{/if}
+									#{if flash.success}
+									<div class="alert alert-success">
+										Sesión cerrada exitosamente
+									</div>
+									#{/if}
+
+
+			                        <div class="form-group">
+			                        	<label class="sr-only" for="form-email">Email:</label>
+			                        	<input type="email" required  name="username" autofocus="autofocus" value="${flash.username}"  placeholder="Ingrese su email..." class="form-email form-control" id="form-email">
+			                        </div>
+			                        
+			                        
+			                        <div class="form-group">		                        	
+			                        	<label class="sr-only" for="form-about-yourself">Contraseña:</label>
+			                        	<input type="password" required name="password" placeholder="Ingrese una contraseña..." class="form-last-name form-control" id="form-last-name">
+			                        </div>
+
+			                        <button type="submit" class="btn btn-primary" >Entrar </button>
+			                 #{/form}
+		                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
