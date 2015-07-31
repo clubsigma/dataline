@@ -1,3 +1,24 @@
+<!--  /*PLANTILLA BASE del proyecto scrum, Sirve para tener el menu y pie de pagina importando archivos de style y javascripts
+ * 31/07/2015 jespinelUTC crea la clase con atributos y su constructor
+ * 
+ Agregando style: 
+ 	
+ 	-> bootstrap.css
+ 	-> jquery-ui.css
+ 	-> zerogrid.css
+ 	-> responsive.css
+ 	-> responsiveslides.css
+ 	-> responsiveslides.css
+ 	-> jquery-ui.css
+ 	
+ Agregando js: 
+ 
+ 	-> jquery-1.6.4.min.js
+ 	-> jquery-1.7.2.min.js
+
+ */
+-->
+
 <!DOCTYPE html>
 
 <html>
@@ -7,10 +28,79 @@
         <link rel="stylesheet" media="screen" href="@{'/public/stylesheets/main.css'}">
         #{get 'moreStyles' /}
         <link rel="shortcut icon" type="image/png" href="@{'/public/images/favicon.png'}">
-        <script src="@{'/public/javascripts/jquery-1.6.4.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
-        #{get 'moreScripts' /}
+      	<link href="@{'/public/stylesheets/bootstrap.css'}" rel="stylesheet">
+        <link href="@{'/public/stylesheets/jquery-ui.css'}" rel="stylesheet">
+		
+             #{get 'moreScripts' /}
+             <script src="@{'/public/javascripts/jquery-1.6.4.min.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+	        
+	           <!-- CSS
+	  ================================================== -->
+		<link rel="stylesheet" href="@{'public/stylesheets/zerogrid.css'}">
+		<link rel="stylesheet" href="@{'public/stylesheets/style.css'}">
+	    <link rel="stylesheet" href="@{'public/stylesheets/responsive.css'}">
+	    <link rel="stylesheet" href="@{'public/stylesheets/bootstrap.css'}">
+		<link rel="stylesheet" href="@{'public/stylesheets/responsiveslides.css'}"/>
+		<link href="@{'public/images/iconoutc.ico'}" rel='icon' type='image/x-icon'/>
+		
+		<script src="@{'public/stylesheets/responsiveslides.css'}"></script>
+		<script src="@{'public/stylesheets/jquery-ui.css'}"></script>
+		
+
+               
+
     </head>
-    <body>
+
+			<!--------------Header--------------->
+			<header>
+				<div class="wrap-header zerogrid">
+					<div id="logo"><a href="#"><img src="@{'public/images/utcd.png'}" style="height: 108px; width: 462px; "/></a></div>
+					<div id="search">
+						<div class="button-search"></div>
+						<input type="text" value="Search..." onfocus="if (this.value == &#39;Search...&#39;) {this.value = &#39;&#39;;}" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Search...&#39;;}">
+					</div>
+				</div>
+			</header>
+			<nav>
+				<div class="wrap-nav zerogrid">
+					<div class="menu">
+						<ul>
+							<li class="first current"><a href=" ">Inicio</a></li>
+							<li><a href="/proyectos/listado">Mis Proyectos</a></li>														
+							<li class="last"><a href="/equipos">Equipos</a></li>
+							<li class="last"><a href="/historias">Historias</a></li>
+							
+							 #{if usuarioConectado}
+					         <li class="last"><a href=""> ${usuarioConectado.email} </a></li>
+					         <li class="last"><a href="/admin"> Administrar</a></li>
+					         <li class="last"><a href="/logout"> Salir </a></li> 				
+					         #{/if}
+					         #{else}
+					         <li class="last"><a href="/secure/login"> Ingresar </a></li> 
+					         #{/else}	
+						</ul>
+					</div>
+	
+		
+			          
+			
+			
+		</div>
+	</nav>
+		
+    
+	 
+		<div class="container">
         #{doLayout /}
+        </div>
+        <script src="@{'/public/javascripts/jquery-1.7.2.min.js'}"></script> 
+		
+		<script src="@{'/public/javascripts/jquery-ui.js'}" type="text/javascript" charset="${_response_encoding}"></script>
+		
+		
+		<script src="@{'/public/javascripts/bootstrap.js'}"></script>
+		
+          
+          
     </body>
 </html>

@@ -15,7 +15,7 @@ input, textarea, select {margin:0; padding:0px;}
 /* ------------------Style--------------------- */
 html, body {width:100%; padding:0; margin:0;}
 body {background: url("http://wallpapers.windowsace.com/pics/-/g/-gray-silver-wallpaper-1900x1200-download-free-desktop-wallpapers-a-l-ibackgroundz.com.jpg") fixed; color: #281452; font: 14px/25px Arial, Helvetica, sans-serif;}
-
+body.body2 {background: url('../images/fondo.jpg') fixed ; color: #281452; font: 14px/25px Arial, Helvetica, sans-serif;}
 
 a{color: #949494;text-decoration: none;}
 a:hover {color: #4AA9C3; text-decoration: none;}

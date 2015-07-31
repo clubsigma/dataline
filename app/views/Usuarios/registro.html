@@ -1,0 +1,91 @@
+﻿#{extends 'main.html' /}
+#{set title:'registro.html' /}
+
+   
+
+  
+
+		<br />
+		<br />
+
+        <!-- Top content -->
+        
+        
+        <div class="top-content">
+        	
+            <div class="inner-bg">
+                <div class="container well">
+                    <div class="row">
+                        <div class="col-sm-7 text">
+                            <h1 style="color:black"><strong>SCRUM</strong> Formulario de Registro</h1>
+                            <div class="description">
+                            	<p style="color:black">
+	                            	Si ya dispone una cuenta puede ingresar al sitema:
+                            	</p>
+                            </div>
+                            <div class="top-big-link">
+                            	<a class="btn btn-success" href="/secure/login"><b>Inicio de Sesión</b></a>                            	
+                            </div>
+                        </div>
+                        <div class="col-sm-5 form-box">
+                        	<div class="form-top">
+                        		<div class="form-top-left">
+                        			<h3>Regístrese Ahora!</h3>
+                            		<p>Por favor complete el siguiente formulario  para obtener una cuenta:</p>
+                        		</div>
+                        		<div class="form-top-right">
+                        			<i class="fa fa-pencil"></i>
+                        		</div>
+                            </div>
+                            
+                            <div class="form-bottom">
+			                    <form role="form" action="@{Usuarios.guardar()}" method="post" class="registration-form">
+			                     #{if flash.errorPassword}
+			                        <div class="alert alert-danger">
+			                        		<b>Las contraseñas no coinciden &{flash.errorPassword}</b>
+			                        </div>
+			                       	#{/if}
+			                       	
+			                       	#{if flash.repetido}
+			                        <div class="alert alert-danger">
+			                        		<b>&{flash.repetido}</b>
+			                        </div>
+			                       	#{/if}
+			                    	<div class="form-group">
+			                    		<label class="sr-only" for="form-first-name">Nombre:</label>
+			                        	<input type="text" required name="nombre" value="${flash.nombre}" placeholder="Ingrese su nombre..." class="form-first-name form-control" id="form-first-name">
+			                        </div>
+			                        <div class="form-group">
+			                        	<label class="sr-only" for="form-last-name">Apellido:</label>
+			                        	<input type="text" required name="apellido"  value="${flash.apellido}"  placeholder="Ingrese su apellido..." class="form-last-name form-control" id="form-last-name">
+			                        </div>
+			                        <div class="form-group">
+			                        	<label class="sr-only" for="form-email">Email:</label>
+			                        	<input type="email" required  name="email"  value="${flash.email}"  placeholder="Ingrese su email..." class="form-email form-control" id="form-email">
+			                        </div>
+			                        <div class="form-group">
+			                        	
+			                        	<label class="sr-only" for="form-about-yourself">Contraseña:</label>
+			                        		<input type="password" required name="password" placeholder="Ingrese una contraseña..." class="form-last-name form-control" id="form-last-name">
+			                        </div>
+			                        
+			                       
+			                        	
+			                        <div class="form-group">
+			                        	<label class="sr-only" for="form-about-yourself">Confirme la Contraseña:</label>
+			                        		<input type="password" required  name="confirmacionPassword" placeholder="Confirme la contraseña..." class="form-last-name form-control" id="form-last-name">
+			                        </div>
+			                        <button type="submit" class="btn btn-primary"><b>Registrar</b></button>
+			                    </form>
+		                    </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+
+     
+  
+

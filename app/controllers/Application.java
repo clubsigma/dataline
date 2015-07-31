@@ -30,24 +30,8 @@ public class Application extends Controller {
     public static void distributivo() {
         render();
     }
-
-    public static void distributivoInicial() {
+    
+    public static void creditos() {
         render();
     }
-    
-
-    public static void actividadDocencia() {
-        render();
-    }
-
-    public static void otrasActividades() {
-        render();
-    }
-    
-    
-    //public static void hojacredito(){
-    	//render();
-    //}
-    
-   
 }

@@ -1,0 +1,88 @@
+#{extends 'main.html' /}
+#{set title:'listado.html' /}
+
+<script>
+$(document).ready(function(){
+	
+	$( ".tabs" ).tabs();
+	
+	$( ".accordion" ).accordion({
+		active:false,
+		collapsible: true,
+		header: "h3"
+	});
+	
+});
+
+</script>
+<br /><br />
+<div class="row">
+	<div class="col-lg-12 text-center well">
+		<h3><b>PROYECTOS EXISTENTES</b></h3>
+		<a class="btn btn-success" href="/proyectos/index"><b> <i class="icon-plus"></i> Nuevo Proyecto</b></a><br><br>
+		#{if flash.confirmacion}
+		<div class="alert alert-success">${flash.confirmacion}</div>
+		#{/if}
+	</div>
+</div>
+
+<div class="row well">
+	<div class="col-lg-2"></div>
+	<div class="col-lg-8">
+	
+	<!-- Tabs -->
+
+
+	
+		#{if proyectos}
+			
+			%{ int n=1;}%
+			#{list items:proyectos, as:'proyecto'}
+				<div class="alert alert-info">
+					<h4 style="color: black;"> Proyecto N°${n}: <b>${proyecto.tema}</b></h4>
+					
+					<div class="accordion">
+						<h3>  Ver Información <i class="caret"></i></h3>
+						<div class="tabs" >
+							<ul style="background-color: #1C94C4; border: none;">
+								<li><a href="#tabs-1">Descripción</a></li>
+								<li><a href="#tabs-2">Introducción</a></li>
+								<li><a href="#tabs-3">Ámbito</a></li>
+								<li><a href="#tabs-4">Alcance</a></li>
+							</ul>
+							<div id="tabs-1" style="text-align: justify; height:450px;" > ${proyecto.descripcion}</div>
+							<div id="tabs-2" style="text-align: justify;">${proyecto.introduccion}</div>
+							<div id="tabs-3" style="text-align: justify;">${proyecto.ambito}</div>
+							<div id="tabs-4" style="text-align: justify;">${proyecto.alcance}</div>
+						</div>
+
+
+					</div>
+					<hr>
+					<div class="pull-left">
+						<a href="/equipos/gestionarEquipo?id_proyecto=${proyecto.id}" class="btn btn-primary"><b><i class="icon-user"></i> Gestionar Equipo</b></a>
+						<a href="/historias/revisarHistorias?id_proyecto=${proyecto.id}" class="btn btn-info"><b> <i class="icon-file"></i> Revisar Historias</b></a>
+						<a href="/proyectos/productBacklog?id_proyecto=${proyecto.id}" class="btn btn-default"><b> <i class="icon-file-text"></i> Product Backlog</b></a>
+					</div>
+					<div class="pull-right">
+						<a class="btn btn-warning" href="/proyectos/modificar?id=${proyecto.id}"><b> <i class="icon-pencil"></i> Modificar</b></a>
+						<a class="btn btn-danger"><b> <i class="icon-trash"> </i>Eliminar</b></a>
+					</div>
+					<br><br>
+				</div>
+			%{n++;}%
+			#{/list}
+			
+		#{/if}
+		#{else}
+			<div class="alert alert-danger">
+				<h5><b>Aún no ha registrado ningun proyecto :(</b></h5>
+			</div>
+			<br /><br /><br /><br /><br /><br />	<br /><br /><br /><br /><br /><br /><br /><br />
+		#{/else}
+	
+	
+	
+	</div>
+	<div class="col-lg-2"></div>
+</div>

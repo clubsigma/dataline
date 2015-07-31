@@ -1,0 +1,38 @@
+#{extends 'main.html' /}
+#{set title:'index.html' /}
+
+#{extends 'main.html' /}
+#{set title:'Home' /}
+
+
+<br><br>
+
+#{if equipos}
+
+	<div class="container">
+		<h4 class="well text-center"><b>Proyectos Disponibles para Gestionar Historias de Usuario</b></h4>
+		%{int i=1;}%
+	#{list items:equipos, as:'equipo'}
+		<div class="alert alert-info">
+			<b>Proyecto Nº ${i}: ${equipo.proyecto.tema}</b>
+			<a href="/historias/gestionarHistorias?id_proyecto=${equipo.proyecto.id}" class="btn btn-primary pull-right">Gestionar Historias</a>
+			<br><br>
+		</div>
+		%{i++;}%
+	#{/list}
+	</div>
+#{/if}
+#{else}
+	<div class="alert alert-danger container">
+		<b>No existen proyectos donde deba gestionar historias de Usuario ya que usted todavia no ha sido asignado como Product Owner</b>
+		<br><br><br><br>
+	</div>
+#{/else}
+
+
+<br>
+<br>
+
+		
+		
+		
