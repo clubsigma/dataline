@@ -34,6 +34,11 @@ public class Application extends Controller {
     public static void distributivoInicial() {
         render();
     }
+    
+
+    public static void actividadDocencia() {
+        render();
+    }
 
     //public static void hojacredito(){
     	//render();
