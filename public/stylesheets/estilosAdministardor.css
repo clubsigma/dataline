@@ -1,0 +1,14 @@
+nav{
+	position: fixed;
+}
+
+#contenedor{
+	float:left;
+	margin-top: 60px;
+	
+}
+
+footer{
+	float: left;
+	width: 100%;
+}
