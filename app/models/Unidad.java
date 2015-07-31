@@ -21,6 +21,14 @@ import play.db.jpa.Model;
 
 @Entity
 public class Unidad extends Model {
+
     public String nombre;
+
+    
+    public Unidad( String nombre){
+    	
+    	this.nombre = nombre;
+    	
+    }
 
 }
