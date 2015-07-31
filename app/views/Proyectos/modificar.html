@@ -1,0 +1,70 @@
+#{extends 'main.html' /}
+#{set title:'index.html' /}
+
+
+
+<form action="@{Proyectos.modificarProyecto()}" enctype="multipart/form-data" method="POST">
+<div class="container"><!-- container en la cabecera para manipular todo borde -->					
+    
+    	<div class="well">
+	    	<h4 class="text-center"><b>MODIFICANDO PROYECTO</b></h4>
+	    	<center><a href="/proyectos/listado" class="btn btn-primary">Ver Todos</a></center>
+		</div>
+			<div id="parametros" class="well" ><br>			
+				Para registrar un Nuevo Proyecto debe ingresar la siguiente información:
+				<input type="hidden" name="id" value="${proyecto.id}" />
+				<div id="tema">		
+					<strong><h3>Tema:</h3></strong>
+					<textarea  type="text" class="form-control" rows="5"  name="tema"  placeholder="Tema del Proyecto que va a realizar" required>${proyecto.tema}</textarea><br>
+				</div>		
+				
+				<br><br>
+				
+				<div id="descripcion">		
+					<strong><h3>Descripción:</h3></strong>
+					<textarea  type="text" class="form-control" rows="5"  name="descripcion"  placeholder="Descripción del Proyecto que va a realizar" required>${proyecto.descripcion}</textarea><br>
+				</div>		
+				
+				<br><br>
+				
+				
+				<!-- **********Introduccion************  -->
+							 
+				<div id="introduccion">		
+					<strong><h3>Introduccion:</h3></strong>
+					<textarea type="text" class="form-control" rows="10"  name="introduccion"  placeholder="Introduccion del Proyecto" required>${proyecto.introduccion}</textarea><br>
+				</div>			 
+							 
+				<br><br>			 
+					
+						<!-- **********Ambito************  -->
+							 
+				<div id="ambito">		
+					<strong><h3>Ambito:</h3></strong>
+					<textarea type="text" class="form-control" rows="10"  name="ambito"  placeholder="Descripcion del Ambito del Proyecto" required>${proyecto.ambito}</textarea><br>		 
+				</div>				 
+					
+				<br><br>			 			
+					
+						<!-- **********Alcance************  -->
+				<div id="alcance">		
+					<strong><h3>Alcance:</h3></strong>
+					<textarea type="text" class="form-control" rows="10"  name="alcance"  placeholder="Descripcion del Alcance del Proyecto" required>${proyecto.alcance}</textarea><br>			
+				</div>
+				
+				<br><br>
+				
+				<div class="col-lg-12 text-center">
+					<button type="submit" class="btn btn-primary"> Modificar</button>																																																	
+					<a href="/proyectos/listado" type="submit" class="btn btn-danger" onclick="return confirm('Esta seguro que desea cancelar')">Cancelar </a>
+				</div>	
+				
+				<br><br>
+								
+									 
+			</div>
+</div>  	
+
+</form>
+					  	
+						

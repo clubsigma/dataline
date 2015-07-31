@@ -1,0 +1,85 @@
+#{extends 'main.html' /}
+#{set title:'gestionarEquipo.html' /}
+
+<h2 class="well text-center">Gestión del Equipo de Desarrollo</h2>
+
+	
+<div class="container">
+		<div class="col-lg-4">
+		</div>
+			<div class="col-lg-4">
+			</div>
+		<div class="col-lg-4">
+		<a href="/proyectos/listado" class="btn btn-primary" >&nbsp; Atras &nbsp;</a> 
+		
+		</div>
+</div>
+<br>
+
+
+<div class="container well">
+		
+		<center><h3><b>${equipo.proyecto.tema}</b></h3></center>
+			<hr>
+
+		#{if flash.confirmacionProduct}
+		<div class="alert alert-warning">
+			<b>${flash.confirmacionProduct}</b>
+		</div>
+		#{/if}
+		
+		#{if flash.confirmacionDeveloper}
+		<div class="alert alert-success">
+			<b>${flash.confirmacionDeveloper}</b>
+		</div>
+		#{/if}
+		
+		<div class="alert alert-info">			
+			<h4>SCRUM MASTER:</h4>
+			<b><li> ${usuarioConectado.nombre} ${usuarioConectado.apellido} </li></b>
+		</div>
+		
+		<br><br>
+		<div class="alert alert-warning">
+
+			<h4>PRODUCT OWNER: </h4> 
+				
+				#{if equipo.productOwner==null}							
+				
+					#{list items:usuarios,  as:'usuario'}					
+						#{if usuario != usuarioConectado && usuario != equipo.productOwner}
+								<div style="background-color: white;" > <a href="/equipos/agregarProductOwner?id_equipo=${equipo.id}&id_usuario=${usuario.id}" class="btn btn-warning" >Agregar</a> &nbsp;&nbsp;&nbsp; ${usuario.nombre} ${usuario.apellido} - ${usuario.email}<br></div>
+						#{/if}				
+					#{/list}
+					
+				#{/if}
+				#{else}
+								<div style="background-color: white;" ><li><b> ${equipo.productOwner.nombre} ${equipo.productOwner.apellido} - ${equipo.productOwner.email}</b></li><br></div>			
+				#{/else}
+	
+		</div>
+		
+		<br><br>
+		<div class="alert alert-success">
+				<h4>DEVELOPMENT TEAM:  </h4> 
+				#{if equipo.developmentTeam}
+					%{ int contDev=1; }%
+					#{list items:equipo.developmentTeam, as:'developer'}
+						<b>Desarrollador Nº ${contDev}: ${developer.nombre} ${developer.apellido} - ${developer.email}</b><br>
+						%{ contDev++; }%
+					#{/list}
+					<br><br>
+				#{/if}
+				
+
+				#{list items:usuarios,  as:'usuario'}					
+					#{if usuario != usuarioConectado && usuario != equipo.productOwner} 						
+						<div style="background-color: white;" > <a href="@{Equipos.agregarDevelopmentTeam(equipo.id,usuario.id)}" class="btn btn-success" >Agregar</a> &nbsp;&nbsp;&nbsp; ${usuario.nombre} ${usuario.apellido} - ${usuario.email}<br></div> 
+					#{/if}				
+				#{/list}	
+			
+		</div>
+	
+	
+	
+</div>
