@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+
+<meta charset="ISO-8859-1">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<link rel="stylesheet" href="@{'public/stylesheets/zerogrid.css'}">
+<link rel="stylesheet" href="@{'public/stylesheets/style.css'}">
+<link rel="stylesheet" href="@{'public/stylesheets/responsive.css'}">
+<link rel="stylesheet"
+	href="@{'public/stylesheets/responsiveslides.css'}" />
+<link rel="stylesheet" href="@{'public/stylesheets/tabla_foro.css'}" />
+<link href="@{'public/images/iconoutc.ico'}" rel='icon'
+	type='image/x-icon' />
+<title>Insert title here</title>
+</head>
+<style>
+.boton {
+	text-decoration: none;
+	color: #fff;
+	font-weight: bold;
+	padding: 2px 5px;
+	font-size: 15px;
+	border-radius: 10px;
+	background-color: #006699;
+	box-shadow: 0 5px 5px #313131, 0 9px 0 #393939, 0px 9px 10px
+		rgba(0, 0, 0, 0.4), inset 0px 2px 9px rgba(255, 255, 255, 0.2), inset
+		0 -2px 9px rgba(0, 0, 0, 0.2);
+	position: relative;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	display: inline-block;
+	font-family: Arial, Helvetica, sans;
+	text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.2);
+}
+
+.boton:hover {
+	box-shadow: 0 5px 5px red, 0 9px 0 #393939, 0px 9px 10px
+		rgba(0, 0, 0, 0.4), inset 0px 2px 15px rgba(255, 255, 255, 0.4), inset
+		0 -2px 9px rgba(0, 0, 0, 0.2);
+	color: #fff !important;
+}
+
+.boton:active {
+	top: 7px;
+	box-shadow: 0 2px 0 #393939, 0px 4px 4px rgba(0, 0, 0, 0.4), inset 0px
+		2px 5px rgba(0, 0, 0, 0.2);
+	color: #fff !important;
+}
+
+.formaBoton {
+	border-radius: 5px;
+	padding-left: 25px;
+	padding-right: 25px;
+}
+
+.colorRojo {
+	background-color: #c34747;
+	box-shadow: 0 5px 5px #853232, 0 9px 0 #5e2525, 0px 9px 10px
+		rgba(0, 0, 0, 0.4), inset 0px 2px 9px rgba(255, 255, 255, 0.2), inset
+		0 -2px 9px rgba(0, 0, 0, 0.2);
+}
+
+.colorRojo:hover {
+	box-shadow: 0 5px 5px #853232, 0 9px 0 #5e2525, 0px 9px 10px
+		rgba(0, 0, 0, 0.4), inset 0px 2px 15px rgba(255, 255, 255, 0.4), inset
+		0 -2px 9px rgba(0, 0, 0, 0.2);
+}
+
+.colorRojon:active {
+	box-shadow: 0 2px 0 #5e2525, 0px 4px 4px rgba(0, 0, 0, 0.4), inset 0px
+		2px 5px rgba(0, 0, 0, 0.2);
+}
+</style>
+<body>
+	<!--------------Header--------------->
+	<header>
+		<div class="wrap-header zerogrid"
+			background="@{'public/images/fondo.jpg'}">
+			<div id="logo">
+				<a href="#"><img src="@{'public/images/utc.png'}"
+					style="height: 108px; width: 462px;" /></a>
+			</div>
+
+		</div>
+	</header>
+	<nav>
+		<div class="wrap-nav zerogrid">
+			<div class="menu">
+				<ul>
+					<li class="current"><a href="@{Application.indexforo()}">Categorias</a></li>
+				</ul>
+			</div>
+
+
+
+
+		</div>
+	</nav>
+	<br>
+
+	<center  id="sidebar" >
+		<div class="heading">
+			<center>
+				<h2>Publicaciones</h2>
+			</center>
+
+		</div>
+		<div style="width: 72%; height: 100%">
+			<a style="float: left" href="@{Application.nuevotema()}"
+				class="boton colorBoton formaBoton">Nuevo Tema</a><br>
+			<br>
+			<div id="head" style="background: black"></div>
+			<div class="datagrid">
+				<table>
+					<thead>
+						<tr>
+							<th>CATEGORIA:</th>
+							<th>POO</th>
+						</tr>
+					</thead>
+					<thead>
+						<tr>
+							<th style="width: 15px;">Img</th>
+							<th><center>Tema</center></th>
+						</tr>
+					</thead>
+					<tfoot>
+						<tr>
+							<td colspan="4"><div id="paging">
+									<ul>
+										<li><a href="#"><span>Anterior</span></a></li>
+										<li><a href="#" class="active"><span>1</span></a></li>
+										<li><a href="#"><span>2</span></a></li>
+										<li><a href="#"><span>3</span></a></li>
+										<li><a href="#"><span>4</span></a></li>
+										<li><a href="#"><span>5</span></a></li>
+										<li><a href="#"><span>Siguiente</span></a></li>
+									</ul>
+								</div>
+						</tr>
+					</tfoot>
+					<tbody>
+						
+							#{list items: publi, as:'pu'}
+						<tr>
+							<td><img alt="" src="@{'public/images/folder.png'}"></td>
+							<td><a href="@{Application.Comentario(pu.id)}"> ${pu.tema}</td>
+						</tr>
+	#{/list}
+
+
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</center>
+
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<!--------------Footer--------------->
+
+	<footer>
+
+		<div class="wrap-footer">
+			<div class="copyright">
+				<p>
+					Copyright � 2012 - <a
+						href="http://www.zerotheme.com/432/free-responsive-html5-css3-website-templates.html"
+						target="_blank">Free Html5 Responsive Templates</a> by <a
+						href="http://www.zerotheme.com" target="_blank">Zerotheme.com</a>
+				</p>
+			</div>
+		</div>
+
+	</footer>
+</body>
+</html>

@@ -1,0 +1,101 @@
+﻿<!DOCTYPE html>
+<head>
+
+<!-- Basic Page Needs
+  ================================================== -->
+<meta charset="utf-8">
+<title>nuevo tema</title>
+<meta>
+<meta>
+
+<!-- Mobile Specific Metas
+  ================================================== -->
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<!-- CSS
+  ================================================== -->
+<link rel="stylesheet" href="@{'public/stylesheets/zerogrid.css'}">
+<link rel="stylesheet" href="@{'public/stylesheets/style.css'}">
+<link rel="stylesheet" href="@{'public/stylesheets/responsive.css'}">
+<link rel="stylesheet"
+	href="@{'public/stylesheets/responsiveslides.css'}" />
+<link href="@{'public/images/iconoutc.ico'}" rel='icon'
+	type='image/x-icon' />
+<script src="@{'public/javascripts/jquery.min.js'}"></script>
+<script src="@{'public/stylesheets/responsiveslides.css'}"></script>
+<link href='./images/iconoutc.ico' rel='icon' type='image/x-icon' />
+<script src="js/jquery.min.js"></script>
+<script src="js/responsiveslides.js"></script>
+
+</head>
+<body>
+	<!--------------Header--------------->
+	<header>
+		<div class="wrap-header zerogrid">
+			<div id="logo">
+				<a href="#"><img src="@{'public/images/utc.png'}"
+					style="height: 93px; width: 435px;" /></a>
+			</div>
+
+		</div>
+	</header>
+
+	<nav>
+		<div class="wrap-nav zerogrid">
+			<div class="menu">
+				<ul>
+					<li class="last current"><a>Nuevo tema</a></li>
+				</ul>
+			</div>
+
+
+		</div>
+	</nav>
+
+	<!--------------Content--------------->
+	<section id="content">
+		<div class="wrap-content zerogrid">
+		<center  id="sidebar" >
+		<div class="heading">
+			<br>
+			<center>
+				<h2>Nuevo Tema</h2>
+			</center>
+
+		
+			<div id="main-content" class="row block">
+				<div class="comment">
+					<center>
+
+
+						<form action="@{Application.guardar()}" method="post" >
+							<div>
+								Titulo:<input type="text" required  name="tema" >
+							</div>
+							Detalle tema:
+							<div>
+								<textarea rows="10" name="descripcion" required  id="comment"
+									style="width: 368px;"></textarea>
+							</div>
+							<input type="submit" name="submit" value="Enviar nuevo tema"
+								style="float: none; width: 129px;">
+						</form>
+					</center>
+
+				</div>
+
+
+			</div>
+		</div>
+	</section>
+	<!--------------Footer--------------->
+	<footer>
+		<div class="wrap-footer">
+			<div class="copyright">
+				<p>Copyright © 2012 - DATALINE by Ing.Sistemas</p>
+			</div>
+		</div>
+	</footer>
+</body>
+</html>
