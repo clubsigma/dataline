@@ -34,7 +34,8 @@ public class Application extends Controller {
     }
     public static void distributivo() {
     	List<Carrera> carrera = Carrera.findAll();
-		render(carrera);
+		List<Asignatura> asignatura = Asignatura.findAll();
+		render(carrera,asignatura);
         render();
     }
     

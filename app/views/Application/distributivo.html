@@ -165,8 +165,19 @@
 			   
 			   
 			   <td><input type="text" name="txtHora1" id="msg" style="width: 100px; font-family : Imprint MT Shadow "></td>
-			   <td><select name="txt1" id="cbxAsignatura1" style="width: 150px; font-family : Imprint MT Shadow ">
-			   </select></td>
+			   
+			   
+			   
+			   <td>
+			   <select name="txt1" id="cbxAsignatura1" style="width: 150px; font-family : Imprint MT Shadow ">
+			    #{list items:asignatura, as:'asignatura'}			
+					<option value="${asignatura.nombre}">${asignatura.nombre}</option>
+		       #{/list}
+			   </select>
+			   </td>
+			   
+			   
+			   
 			   <td><input id="btnAnadir"  type="button" value="Anadir" style="width: 100px; font-family : Imprint MT Shadow " ></td>
 			</tr>	
 			
@@ -212,8 +223,15 @@
 			   
 			   
 			   <td><input type="text" name="txtHora1" id="msg" style="width: 100px; font-family : Imprint MT Shadow "></td>
-			   <td><select name="txt1" id="cbxAsignatura1" style="width: 150px; font-family : Imprint MT Shadow ">
-			   </select></td>
+			   
+			   <td>
+			   <select name="txt1" id="cbxAsignatura1" style="width: 150px; font-family : Imprint MT Shadow ">
+			    #{list items:asignatura, as:'asignaturas'}			
+					<option value="${asignaturas.nombre}">${asignaturas.nombre}</option>
+		       #{/list}
+			   </select>
+			   </td>
+			   
 			   <td><input id="btnEliminar"  type="button" value="Eliminar" style="width: 100px; font-family : Imprint MT Shadow " ></td>
 			</tr>
 			
