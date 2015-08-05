@@ -33,6 +33,8 @@ public class Application extends Controller {
         render();
     }
     public static void distributivo() {
+    	List<Carrera> carrera = Carrera.findAll();
+		render(carrera);
         render();
     }
     
