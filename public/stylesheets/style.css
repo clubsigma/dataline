@@ -117,7 +117,7 @@ nav .wrap-nav{height: 58px;background: black; border:3px solid #C0C0C0;}
 #sidebar{}
 #sidebar .box{margin-bottom:20px;}
 #sidebar .heading{}
-#sidebar .heading h2{font-size:24px; line-height:30px; color: #ff8000; margin-bottom: 20px; font-family: Impact,Charcoal,sans-serif; font-weight: normal; text-transform: uppercase;}
+#sidebar .heading h2{font-size:50px; line-height:30px; color: #ff0000; margin-bottom: 20px; font-family: Impact,Charcoal,sans-serif; font-weight: normal; text-transform: uppercase;}
 #sidebar .content{padding:15px}
 #sidebar .content img{float:left; margin:0px 10px 10px 0px; border: 3px solid #555555;}
 #sidebar .content ul{list-style-type:none;}

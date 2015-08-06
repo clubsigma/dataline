@@ -21,6 +21,8 @@
 <link rel="stylesheet" href="@{'public/stylesheets/style.css'}">
 <link rel="stylesheet" href="@{'public/stylesheets/responsive.css'}">
 <link rel="stylesheet" href="@{'public/stylesheets/bootstrap.min.css'}">
+<link rel="stylesheet" href="@{'public/stylesheets/bootstrap.css'}">
+
 <link rel="stylesheet"
 	href="@{'public/stylesheets/responsiveslides.css'}" />
 
@@ -28,6 +30,7 @@
 	type='image/x-icon' />
 <script src="@{'public/javascripts/jquery.min.js'}"></script>
 <script src="@{'public/javascripts/responsiveslides.js'}"></script>
+<script src="@{'public/javascripts/bootstrap.js'}"></script>
 
 <!-- ESTILOS PRINCIPAL FCATEGORIA
   ================================================== -->
@@ -37,19 +40,6 @@
 
 
 
-
-<script>
-		$(function () {
-		  $("#slider").responsiveSlides({
-			auto: true,
-			pager: false,
-			nav: true,
-			speed: 500,
-			maxwidth: 962,
-			namespace: "centered-btns"
-		  });
-		});
-	</script>
 
 </head>
 <body>
@@ -70,8 +60,7 @@
 				<ul>
 					<li class="first"><a href="index">Inicio</a></li>
 					<li class="current"><a href=" ">Foros Academicos</a></li>
-					<li class="last"><a href=" ">Contacto</a></li>
-				</ul>
+					</ul>
 			</div>
 
 
@@ -97,7 +86,7 @@
 
 			<div id="sidebar" class="content" id="content">
 				<div  class="heading">
-					<center><h2>CATEGORIAS</h2></center>
+					<center><h2 >CATEGORIAS</h2></center>
 					
 					
 			
@@ -105,13 +94,13 @@
 				<div class="box-blue">
 					<div id="ddbox_36" class="title_box">
 						<h3 id="f36">
-							<a>PROGRAMACION ORIENTADO A OBJETOS</a>
 						</h3>
 					</div>
 					<ul class="content_box">
+					<br>
 						#{list items: cate, as:'c'}
 						
-						<li><a href="@{Application.publicaciones()}"><button type="button" class="btn btn-defaul">${c.nombre}</button></a></li>	
+						<li><a href="@{Application.publicaciones()}"><button type="button" class="btn btn-success">${c.nombre}</button></a></li>	
 								<br>
 							<br>
 					#{/list}

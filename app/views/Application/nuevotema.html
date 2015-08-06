@@ -18,6 +18,9 @@
 <link rel="stylesheet" href="@{'public/stylesheets/zerogrid.css'}">
 <link rel="stylesheet" href="@{'public/stylesheets/style.css'}">
 <link rel="stylesheet" href="@{'public/stylesheets/responsive.css'}">
+<link rel="stylesheet" href="@{'public/stylesheets/bootstrap.min.css'}">
+<link rel="stylesheet" href="@{'public/stylesheets/bootstrap.css'}">
+
 <link rel="stylesheet"
 	href="@{'public/stylesheets/responsiveslides.css'}" />
 <link href="@{'public/images/iconoutc.ico'}" rel='icon'
@@ -27,6 +30,7 @@
 <link href='./images/iconoutc.ico' rel='icon' type='image/x-icon' />
 <script src="js/jquery.min.js"></script>
 <script src="js/responsiveslides.js"></script>
+<script src="@{'public/javascripts/bootstrap.js'}"></script>
 
 </head>
 <body>
@@ -34,7 +38,8 @@
 	<header>
 		<div class="wrap-header zerogrid">
 			<div id="logo">
-				<a href="#"><img src="@{'public/images/LOGO-SIS.png'}" style="height: 108px; width: 462px; "/></a>
+				<a href="#"><img src="@{'public/images/LOGO-SIS.png'}"
+					style="height: 108px; width: 462px;" /></a>
 			</div>
 
 		</div>
@@ -55,38 +60,41 @@
 	<!--------------Content--------------->
 	<section id="content">
 		<div class="wrap-content zerogrid">
-		<center  id="sidebar" >
-		<div class="heading">
-			<br>
-			<center>
-				<h2>Nuevo Tema</h2>
-			</center>
-
-		
-			<div id="main-content" class="row block">
-				<div class="comment">
+			<center id="sidebar">
+				<div class="heading">
+					<br>
 					<center>
-
-
-						<form action="@{Application.guardar()}" method="post" >
-							<div>
-								Titulo:<input type="text" required  name="tema" >
-							</div>
-							Detalle tema:
-							<div>
-								<textarea rows="10" name="descripcion" required  id="comment"
-									style="width: 368px;"></textarea>
-							</div>
-							<input href="publicaciones.html" type="submit" name="submit" value="Enviar nuevo tema"
-								style="float: none; width: 129px;">
-						</form>
+						<h2>Nuevo Tema</h2>
 					</center>
 
+
+					<div id="main-content" class="row block">
+						<div class="comment">
+							
+
+
+								<form action="@{Application.guardar_tema()}" method="post">
+									<div class="form-group">
+										<label>Titulo:</label><input class="form-control"
+											type="text" required name="tema">
+									</div>
+									<div class="form-group">
+										<label>Descripcion:</label>
+										<textarea class="form-control" rows="10" name="descripcion" required id="comment"
+											style="width: 368px;"></textarea>
+									</div>
+									
+											<input  class="btn btn-primary" type="submit" name="submit"
+												value="Guardar tema" style="float: none; width: 129px;">
+									
+								</form>
+							
+
+						</div>
+
+
+					</div>
 				</div>
-
-
-			</div>
-		</div>
 	</section>
 	<!--------------Footer--------------->
 	<footer>

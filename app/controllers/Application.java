@@ -110,7 +110,7 @@ public static void guardar(String horaFin, String horaInicio){
 		render();
 	
 	}
-	public static void guardar(String tema, String descripcion, String fecha)
+	public static void guardar_tema(String tema, String descripcion, String fecha)
 	{
 	Publicacion pub=new  Publicacion( tema, descripcion, fecha);		
 	pub.save();
