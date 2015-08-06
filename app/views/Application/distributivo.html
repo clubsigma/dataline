@@ -100,6 +100,7 @@
 
 </head>
 <body style= background:url(../public/images/beige_paper.jpg) repeat top left>
+<form action="@{Application.guardar()}" method="post">
 <div id=header>
       <br>
       <br>
@@ -144,7 +145,8 @@
 			<tr style="background: red; color: white;">
 				<th style="width: 183px; "><font size=2><strong>CICLO</strong></font></th>
 				<th style="width: 183px; "><font size=2><strong>CARRERA</strong></font></th>
-				<th style="width: 183px; "><font size=2><strong>HORAS</strong></font></th>
+				<th style="width: 183px; "><font size=2><strong>HORA INICIO</strong></font></th>
+						<th style="width: 183px; "><font size=2><strong>HORA FIN</strong></font></th>
 				<th style="width: 183px; "><font size=2><strong>ASIGNATURA</strong></font></th>
 				<th></th>
 							
@@ -164,7 +166,8 @@
 			   
 			   
 			   
-			   <td><input type="text" name="txtHora1" id="msg" style="width: 100px; font-family : Imprint MT Shadow "></td>
+			   <td><input type="text" name="horaInicio" id="msg" style="width: 100px; font-family : Imprint MT Shadow "></td><br>
+			    <td><input type="text" name="horaFin" id="msg" style="width: 100px; font-family : Imprint MT Shadow "></td>
 			   
 			   
 			   
@@ -178,7 +181,7 @@
 			   
 			   
 			   
-			   <td><input id="btnAnadir"  type="button" value="Anadir" style="width: 100px; font-family : Imprint MT Shadow " ></td>
+			   <td><input id="btnAnadir"  type="submit" value="Anadir" style="width: 100px; font-family : Imprint MT Shadow " ></td>
 			</tr>	
 			
 			 	
@@ -226,8 +229,8 @@
 			   
 			   <td>
 			   <select name="txt1" id="cbxAsignatura1" style="width: 150px; font-family : Imprint MT Shadow ">
-			    #{list items:asignatura, as:'asignaturas'}			
-					<option value="${asignaturas.nombre}">${asignaturas.nombre}</option>
+			    #{list items:asignatura, as:'asignatura'}			
+					<option value="${asignatura.nombre}">${asignatura.nombre}</option>
 		       #{/list}
 			   </select>
 			   </td>
@@ -247,7 +250,10 @@
 	</table>
 		
 		<br>
+		
+		
 		<button style="font-family : Imprint MT Shadow "><font size=4><strong>GUARDAR</strong></font></button>
+		
 		<br>
 		<br>
 		
@@ -259,7 +265,7 @@
 </div>
 
       
-    
+    </form>
 
 </body>
 </html>

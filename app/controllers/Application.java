@@ -84,9 +84,17 @@ public class Application extends Controller {
 	Publicacion p=Publicacion.findById(id);
 	render(p);
 		redirect("/application/Comentario");
-	
-	
 	}
+	
+	
+public static void guardar(String horaFin, String horaInicio){
+    	
+    	Hora hora = new Hora(horaFin, horaInicio);
+    	hora.save();
+    	distributivo();
+    }
+	
+	
 	public static void ver  (long id) {
 		Comentario co=Comentario.findById(id);
 		render(co);
