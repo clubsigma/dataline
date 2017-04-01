@@ -123,6 +123,7 @@
 						<tr>
 							<th style="width: 15px;">Img</th>
 							<th><center>Tema</center></th>
+								<th><center>Categoria</center></th>
 						</tr>
 					</thead>
 					<tfoot>
@@ -146,8 +147,12 @@
 						<tr>
 							<td><img alt="" src="@{'public/images/folder.png'}"></td>
 							<td><a href="@{Application.Comentario(pu.id)}"> ${pu.tema}</td>
+							#{/list}
+							#{list items: cat, as:'c'}
+							<td><a href=""> ${c.nombre}</td>
+								#{/list}
 						</tr>
-	#{/list}
+
 
 
 					</tbody>

@@ -4,7 +4,6 @@ import models.Categoria;;
 
 @CRUD.For(Categoria.class)
 
-public class Asignaturas extends CRUD {
+public class Categorias extends CRUD {
 	
 }
-    

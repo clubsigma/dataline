@@ -77,7 +77,9 @@ public class Application extends Controller {
 	public static void publicaciones() {
 
 		List<Publicacion> publi=Publicacion.findAll();
-		render(publi);
+		List<Categoria> cat=Categoria.findAll();
+		render(publi,cat);
+		
 	}
 	
 	public static void Comentario(long id) {

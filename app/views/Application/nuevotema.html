@@ -70,25 +70,27 @@
 
 					<div id="main-content" class="row block">
 						<div class="comment">
-							
 
 
-								<form action="@{Application.guardar_tema()}" method="post">
-									<div class="form-group">
-										<label>Titulo:</label><input class="form-control"
-											type="text" required name="tema">
-									</div>
-									<div class="form-group">
-										<label>Descripcion:</label>
-										<textarea class="form-control" rows="10" name="descripcion" required id="comment"
-											style="width: 368px;"></textarea>
-									</div>
-									
-											<input  class="btn btn-primary" type="submit" name="submit"
-												value="Guardar tema" style="float: none; width: 129px;">
-									
-								</form>
-							
+
+							<form action="@{Application.guardar_tema()}" method="post">
+								<div class="form-group">
+									<label>Titulo:</label><input class="form-control" type="text"
+										required name="tema" pattern="[A-Za-z]+$"
+										title="debe ingresar solo texto">
+								</div>
+								<div class="form-group">
+									<label>Descripcion:</label>
+									<textarea  class="form-control" rows="10" name="descripcion"
+										required id="comment" style="width: 368px;"
+										></textarea>
+								</div>
+
+								<input class="btn btn-primary" type="submit" name="submit"
+									value="Guardar tema" style="float: none; width: 129px;">
+
+							</form>
+
 
 						</div>
 

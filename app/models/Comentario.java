@@ -8,10 +8,12 @@ import play.db.jpa.Model;
 
 public class Comentario extends Model {
 	public String descripcion;
+	public String autores;
 
-	public Comentario(String descripcion) {
+	public Comentario(String descripcion, String autores ) {
 		super();
 		this.descripcion = descripcion;
+		this.autores = autores;
 	}
 
 

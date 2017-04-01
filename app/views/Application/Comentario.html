@@ -134,7 +134,7 @@ a:visited{
 <!--------------Header--------------->
 <header>
 	<div class="wrap-header zerogrid">
-		<div id="logo"><a href="#"><img src="@{'public/images/utc.png'}" style="height: 108px; width: 462px; "/></a></div>
+		<div id="logo"><a href="#"><img src="@{'public/images/LOGO-SIS.png'}" style="height: 108px; width: 462px; "/></a></div>
 		
 		</div>
 </header>
@@ -163,19 +163,18 @@ a:visited{
 <div class="featured">
 	<div class="wrap-featured zerogrid">
 		<div class="datagrid"><table>
-<thead><tr ><th style="width: 351px; height: 9px; background: Silver; color: Black" ><img alt=" " src="public/images/fondo.jpg" style="height: 12px; width: 12px; "> 05/06/2006, 02:54</th><td class="alt" style="height: 9px; width: 183px; background-color: Silver"><a href="#"> #1 (permalink) </a></td> </thead>
+<thead><tr ><th style="width: 351px; height: 9px; background: Silver; color: Black" ><img alt=" " src="public/images/fondo.jpg" style="height: 12px; width: 12px; "> 07/08/2015, 10:00am</th><td class="alt" style="height: 9px; width: 183px; background-color: Silver"><a href="#"> # comentarios </a></td> </thead>
 <tfoot><tr><td colspan="4"><div id="paging"><ul><li><a href="#"><span>Previous</span></a></li><li><a href="#" class="active"><span>1</span></a></li><li><a href="#"><span>2</span></a></li><li><a href="#"><span>3</span></a></li><li><a href="#"><span>4</span></a></li><li><a href="#"><span>5</span></a></li><li><a href="#"><span>Next</span></a></li></ul></div></tr></tfoot>
 <tbody><tr></tr>
 
 	#{list items: p, as:'pu'}						
 
-<tr class="alt"><th style="background-color: dodgerblue;"><a href="#"><img alt="" src="public/images/img01.jpg" style="height: 60px; width: 80px; "> </a><a href="#" >${pu.descripcion}</a></th><div> <td class="alt" style="height: 9px; width: 2px; ">
+<tr class="alt"><th style="background-color:white;"><a href="#"><img alt="" src="@{'public/images/icon1.png'}" style="height: 60px; width: 80px; "> </a><a href="#" >${pu.descripcion}</a><br><br><textarea class="datagrid" rows="" name="descripcion" cols="" required style="height: 27px; width: 412px; float:none;  "></textarea></th><div> <td class="alt" style="height: 9px; width: 2px;">
 <a href="#">
-Fecha de Ingreso: octubre-2004<br>
-Ubicaci�n: Zaragoza<br>
+Fecha de Ingreso: Agosto<br>
+Ubicacion: latacunga<br>
 Mensajes: 293<br>
-Antig�edad: 10 a�os, 9 meses<br>
-Puntos: 9</a></td</div>>
+</a></td></div>
 </tr>
 	#{/list}
 
@@ -187,11 +186,12 @@ Puntos: 9</a></td</div>>
  #{list items: co, as:'come'}						
 
 <label> ${come.descripcion}    </label>	
+<label> ${come.autores}    </label>	
 #{/list}	
 	
 <form action="@{Application.guardarComentario()}" method="post">
-<textarea class="datagrid" rows="" name="descripcion" cols="" style="height: 27px; width: 412px; float:none;  "></textarea>
-<button  type="Submit" onclick="guardar();">Comentar</button> 
+<textarea class="datagrid" rows="" name="descripcion" cols="" required style="height: 27px; width: 412px; float:none;  "></textarea>
+<button  type="Submit" onclick="confirm('su dato se ha almacenado');">Comentar</button> 
 </form>
 
 </th>
